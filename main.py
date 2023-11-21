@@ -7,6 +7,15 @@ class App(tk.Tk):
         super().__init__()
 
 
-if __name__ == '__main__':
+def run():
     app = App()
     app.mainloop()
+
+
+def main():
+    getter = FrameGetter.CapObj()
+    print(getter)
+
+
+if __name__ == '__main__':
+    main()
