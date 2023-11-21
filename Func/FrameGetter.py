@@ -55,7 +55,7 @@ class CapObj:
         ret, frame = cap.read()
         if not ret:
             frame = None
-        q.set(frame)
+        q.put(frame)
 
     def save(self, name):
         task = threading.Thread(target=cv.imwrite, args=(name, self.frame))

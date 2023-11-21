@@ -1,4 +1,5 @@
 import tkinter as tk
+import cv2 as cv
 from Func import FrameGetter
 
 
@@ -13,8 +14,16 @@ def run():
 
 
 def main():
-    getter = FrameGetter.CapObj()
-    print(getter)
+    device = './result.mp4'
+    getter = FrameGetter.CapObj(device)
+    while True:
+        cv.imshow('window', getter.frame)
+        key = cv.waitKey(1) & 0xFF
+        if key == ord('q'):
+            break
+
+    del getter
+    cv.destroyAllWindows()
 
 
 if __name__ == '__main__':
