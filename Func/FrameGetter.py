@@ -1,3 +1,4 @@
+import queue
 import threading
 import cv2 as cv
 
@@ -5,6 +6,7 @@ import cv2 as cv
 class CapObj:
     __cap = None
     __frame = None
+    __frame_queue = queue.Queue()
     __device = None
 
     def __del__(self):
@@ -26,12 +28,9 @@ class CapObj:
 
     @property
     def frame(self):
-        if self.cap is not None:
-            ret, frame = self.cap.read()
-            if ret:
-                self.__frame = frame
-            else:
-                self.__frame = None
+        self.__frame = self.__frame_queue.get()
+        task = threading.Thread(target=self.__getter, args=(self.__frame_queue, self.cap))
+        task.start()
         return self.__frame
 
     @property
@@ -42,6 +41,13 @@ class CapObj:
     def device(self, value):
         self.__device = value
         self.cap = self.device
+
+    @staticmethod
+    def __getter(q, cap):
+        ret, frame = cap.read()
+        if not ret:
+            frame = None
+        q.set(frame)
 
     def save(self, name):
         task = threading.Thread(target=cv.imwrite, args=(name, self.frame))
