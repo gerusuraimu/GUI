@@ -1,7 +1,7 @@
 import cv2 as cv
 
 
-class Obj:
+class CapObj:
     __cap = None
     __frame = None
     __device = None
