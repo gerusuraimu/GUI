@@ -64,4 +64,5 @@ class CapObj:
 
 class ImageObj:
     __files = None
+    __image = None
 
