@@ -6,8 +6,8 @@ import cv2 as cv
 class CapObj:
     __cap = None
     __frame = None
-    __frame_queue = queue.Queue()
     __device = None
+    __frame_queue = queue.Queue()
 
     def __init__(self, device=None):
         if device is not None:
