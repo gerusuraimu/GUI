@@ -65,4 +65,5 @@ class CapObj:
 class ImageObj:
     __files = None
     __image = None
+    __image_queue = queue.Queue()
 
