@@ -6,13 +6,11 @@ class Menu:
     __menu = None
 
     def __init__(self, root, width, height, x, y):
-        self.data = Data.SideMenu()
-
         frame = tk.Frame(
             root,
             width=width,
             height=height,
-            bg=self.data.bg
+            bg='white'
         )
         frame.place(x=x, y=y)
 
