@@ -1,12 +1,12 @@
 import tkinter as tk
-import cv2 as cv
 from UI import Menu
-from Func import Data, FrameGetter
+from Func import Data
 
 
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
+        self.resizable(width=False, height=False)
 
         self.data = Data.MainData()
         self.m_data = Data.TopMenu()

@@ -1,6 +1,3 @@
-import tkinter as tk
-
-
 class MainData:
     __title = 'window'
     __geometry = '1920x1080'

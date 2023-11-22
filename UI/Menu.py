@@ -1,5 +1,4 @@
 import tkinter as tk
-from Func import Data
 
 
 class Menu:
