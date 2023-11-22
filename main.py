@@ -1,3 +1,4 @@
+import argparse
 import tkinter as tk
 import cv2 as cv
 from Func import FrameGetter
@@ -13,8 +14,11 @@ def run():
     app.mainloop()
 
 
-def main():
-    device = './result.mp4'
+def main(parser):
+    parser.add_argument('-d', '--device')
+    arg = parser.parse_args()
+
+    device = arg.device
     getter = FrameGetter.CapObj(device)
     while True:
         cv.imshow('window', getter.frame)
@@ -27,4 +31,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    args = argparse.ArgumentParser()
+    main(args)
