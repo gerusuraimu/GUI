@@ -19,10 +19,6 @@ class App(tk.Tk):
         self.geometry(self.main_data.geometry)
 
 
-def main():
+if __name__ == '__main__':
     app = App()
     app.mainloop()
-
-
-if __name__ == '__main__':
-    main()
