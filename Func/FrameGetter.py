@@ -67,3 +67,5 @@ class ImageObj:
     __image = None
     __image_queue = queue.Queue()
 
+    def __init__(self):
+        pass
