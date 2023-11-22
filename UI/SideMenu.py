@@ -5,17 +5,16 @@ from Func import Data
 class Menu:
     __menu = None
 
-    def __init__(self, root):
+    def __init__(self, root, width, height, x, y):
         self.data = Data.SideMenu()
 
         frame = tk.Frame(
             root,
-            width=self.data.width,
-            height=self.data.height,
-            relief=self.data.relief,
+            width=width,
+            height=height,
             bg=self.data.bg
         )
-        frame.place(x=self.data.x, y=self.data.y)
+        frame.place(x=x, y=y)
 
         self.menu = frame
 

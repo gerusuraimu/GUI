@@ -8,15 +8,17 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
 
-        self.main_data = Data.MainData()
-        self.side_data = Data.SideMenu()
-        self.side_menu = SideMenu.Menu(self)
+        self.m_data = Data.MainData()
+        self.s_data = Data.SideMenu()
+
+        self.top_menu = SideMenu.Menu(self, self.m_data.width, self.m_data.height, self.m_data.x, self.m_data.y)
+        self.side_menu = SideMenu.Menu(self, self.s_data.width, self.s_data.height, self.s_data.x, self.s_data.y)
 
         self.ui_init()
 
     def ui_init(self):
-        self.title(self.main_data.title)
-        self.geometry(self.main_data.geometry)
+        self.title(self.m_data.title)
+        self.geometry(self.m_data.geometry)
 
 
 if __name__ == '__main__':
