@@ -65,7 +65,22 @@ class CapObj:
 class ImageObj:
     __files = None
     __image = None
-    __image_queue = queue.Queue()
 
-    def __init__(self):
-        pass
+    def __init__(self, files):
+        self.files = files
+
+    @property
+    def files(self):
+        return self.__files
+
+    @files.setter
+    def files(self, value):
+        self.__files = value
+
+    @property
+    def image(self):
+        return self.__image
+
+    @image.setter
+    def image(self, value):
+        self.__image = cv.imread(value)
