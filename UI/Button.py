@@ -11,23 +11,20 @@ class SideMenu:
         self.__obj = obj
 
         self.__button()
+        self.__place()
 
     def __button(self):
-        self.button0 = tk.Button(self.__obj, text=self.__data.text0)
-        self.button1 = tk.Button(self.__obj, text=self.__data.text1)
+        self.__button0 = tk.Button(self.__obj, text=self.__data.text0, width=20, height=1)
+        self.__button1 = tk.Button(self.__obj, text=self.__data.text1, width=20, height=1)
+
+    def __place(self):
+        self.button0.place(x=0, y=0)
+        self.button1.place(x=0, y=25)
 
     @property
     def button0(self):
         return self.__button0
 
-    @button0.setter
-    def button0(self, value):
-        self.__button0 = value
-
     @property
     def button1(self):
         return self.__button1
-
-    @button1.setter
-    def button1(self, value):
-        self.__button1 = value

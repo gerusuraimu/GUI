@@ -1,4 +1,4 @@
-import Base
+from Func import Base
 
 
 class MainData:
@@ -21,12 +21,12 @@ class TopFrame(Base.FrameBase):
 
 class SideFrame(Base.FrameBase):
     def __init__(self):
-        super().__init__(x=0, y=50, pad_x=5, pad_y=5, width=150, height=1080, bg='white')
+        super().__init__(x=0, y=50, pad_x=0, pad_y=0, width=150, height=1080, bg='white')
 
 
 class CanvasFrame(Base.FrameBase):
     def __init__(self):
-        super().__init__(x=150, y=50, pad_x=5, pad_y=5, width=1770, height=1030, bg='black')
+        super().__init__(x=150, y=50, pad_x=0, pad_y=0, width=1770, height=1030, bg='black')
 
 
 class SideButton:
