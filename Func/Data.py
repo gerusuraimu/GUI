@@ -1,3 +1,6 @@
+import Base
+
+
 class MainData:
     __title = 'window'
     __geometry = '1920x1080'
@@ -11,118 +14,19 @@ class MainData:
         return self.__geometry
 
 
-class TopFrame:
-    __x = 0
-    __y = 0
-    __pad_x = 5
-    __pad_y = 5
-    __width = 1920
-    __height = 50
-    __bg = 'white'
-
-    @property
-    def x(self):
-        return self.__x
-
-    @property
-    def y(self):
-        return self.__y
-
-    @property
-    def pad_x(self):
-        return self.__pad_x
-
-    @property
-    def pad_y(self):
-        return self.__pad_y
-
-    @property
-    def width(self):
-        return self.__width
-
-    @property
-    def height(self):
-        return self.__height
-
-    @property
-    def bg(self):
-        return self.__bg
+class TopFrame(Base.FrameBase):
+    def __init__(self):
+        super().__init__(x=0, y=0, pad_x=5, pad_y=5, width=1920, height=50, bg='white')
 
 
-class SideFrame:
-    __x = 0
-    __y = 50
-    __pad_x = 5
-    __pad_y = 5
-    __width = 150
-    __height = 1080
-    __bg = 'white'
-
-    @property
-    def x(self):
-        return self.__x
-
-    @property
-    def y(self):
-        return self.__y
-
-    @property
-    def pad_x(self):
-        return self.__pad_x
-
-    @property
-    def pad_y(self):
-        return self.__pad_y
-
-    @property
-    def width(self):
-        return self.__width
-
-    @property
-    def height(self):
-        return self.__height
-
-    @property
-    def bg(self):
-        return self.__bg
+class SideFrame(Base.FrameBase):
+    def __init__(self):
+        super().__init__(x=0, y=50, pad_x=5, pad_y=5, width=150, height=1080, bg='white')
 
 
-class CanvasFrame:
-    __x = 150
-    __y = 50
-    __pad_x = 5
-    __pad_y = 5
-    __width = 1920 - 150
-    __height = 1080 - 50
-    __bg = 'black'
-
-    @property
-    def x(self):
-        return self.__x
-
-    @property
-    def y(self):
-        return self.__y
-
-    @property
-    def pad_x(self):
-        return self.__pad_x
-
-    @property
-    def pad_y(self):
-        return self.__pad_y
-
-    @property
-    def width(self):
-        return self.__width
-
-    @property
-    def height(self):
-        return self.__height
-
-    @property
-    def bg(self):
-        return self.__bg
+class CanvasFrame(Base.FrameBase):
+    def __init__(self):
+        super().__init__(x=150, y=50, pad_x=5, pad_y=5, width=1770, height=1030, bg='black')
 
 
 class SideButton:
