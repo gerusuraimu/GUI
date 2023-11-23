@@ -1,5 +1,5 @@
 import tkinter as tk
-from UI import Menu
+from UI import Frame, Button
 from Func import Data
 
 
@@ -9,22 +9,18 @@ class App(tk.Tk):
         self.resizable(width=False, height=False)
 
         self.data = Data.MainData()
-        self.m_dt = Data.TopMenu()
-        self.s_dt = Data.SideMenu()
-        self.c_dt = Data.Canvas()
+        self.top_data = Data.TopFrame()
+        self.side_data = Data.SideFrame()
+        self.canvas_data = Data.CanvasFrame()
 
         self.title(self.data.title)
         self.geometry(self.data.geometry)
 
-        self.top_menu = Menu.Menu(
-            self, self.m_dt.w, self.m_dt.h, self.m_dt.p_x, self.m_dt.p_y, self.m_dt.x, self.m_dt.y, self.m_dt.bg
-        )
-        self.side_menu = Menu.Menu(
-            self, self.s_dt.w, self.s_dt.h, self.s_dt.p_x, self.s_dt.p_y, self.s_dt.x, self.s_dt.y, self.s_dt.bg
-        )
-        self.canvas_frame = Menu.Menu(
-            self, self.c_dt.w, self.c_dt.h, self.c_dt.p_x, self.c_dt.p_y, self.c_dt.x, self.c_dt.y, self.c_dt.bg
-        )
+        self.top_menu = Frame.Frame(self, self.top_data)
+        self.side_menu = Frame.Frame(self, self.side_data)
+        self.canvas_frame = Frame.Frame(self, self.canvas_data)
+
+        self.side_button = Button.SideMenu(self.side_menu.frame)
 
 
 if __name__ == '__main__':
