@@ -30,8 +30,9 @@ class CanvasFrame(Base.FrameBase):
 
 
 class SideButton:
-    __text0 = 'Rectangle'
-    __text1 = 'Polygon'
+    __text0 = 'Start'
+    __text1 = 'Stop'
+    __text2 = 'Exit'
 
     @property
     def text0(self):
@@ -40,3 +41,7 @@ class SideButton:
     @property
     def text1(self):
         return self.__text1
+
+    @property
+    def text2(self):
+        return self.__text2
