@@ -1,4 +1,3 @@
-import sys
 import tkinter as tk
 from Func import Data
 
@@ -14,7 +13,6 @@ class SideMenu:
 
         self.__button()
         self.__place()
-        # self.__command()
 
     def __button(self):
         self.__button0 = tk.Button(self.__obj, text=self.__data.text0, width=20, height=1)
@@ -25,9 +23,6 @@ class SideMenu:
         self.button0.place(x=0, y=0)
         self.button1.place(x=0, y=25)
         self.button2.place(x=0, y=50)
-
-    def __command(self):
-        self.button2.configure(command=sys.exit())
 
     @property
     def button0(self):

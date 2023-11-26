@@ -35,7 +35,6 @@ class App(tk.Tk):
         self.canvas.bind('<Button-1>', self.__canvas_click)
 
     def __canvas_click(self, event):
-        print(event)
         if self.disp_id is None:
             self.disp_image()
         else:
